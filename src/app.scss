@@ -1,9 +1,9 @@
 /* Override global Sass variables from the /utilities folder */
 @use "bulma/sass/utilities" with (
-$link: $pink,
-);;
+  $link: $pink
+);
 @use "bulma/sass/base" with (
-$body-overflow-y: auto
+  $body-overflow-y: auto
 );
 /* Import the components you need */
 @use "bulma/sass/elements";

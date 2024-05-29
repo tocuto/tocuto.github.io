@@ -1,6 +1,9 @@
+<script></script>
 
 <div class="routify-demo">
-    <a class="index" style="margin: 5px;" href="/">Index</a>
-    <a class="demo" style="margin: 5px;" href="/demo">Demo</a>
+  <a class="index" style="margin: 5px;" href="/">Index</a>
+  <a class="demo" style="margin: 5px;" href="/demo">Demo</a>
 </div>
-<p>On demo</p><script></script><style></style>
+<p>On demo</p>
+
+<style></style>
