@@ -1,33 +1,57 @@
 <script>
-  import routes from "../.routify/routes.default.js";
-  import { Router, createRouter } from "@roxi/routify";
+  // import routes from "../.routify/routes.default.js";
+  // import { Router, createRouter } from "@roxi/routify";
   import "./app.scss";
-  import Counter from "./lib/Counter.svelte";
+  import Hero from "./Hero.svelte";
+  import Content from "./Content.svelte";
 
-  export const router = createRouter({
-    routes,
-  });
+  // export const router = createRouter({
+  //   routes,
+  // });
 </script>
 
-<Router {router}></Router>
-
 <main>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
+  <div class="columns m-0 page">
+    <div
+      class={`
+          column
+          is-row-start-1
+          is-row-end-1
+          is-5
+          has-background-black-ter
+          intro
+      `}
+    >
+      <Hero />
+    </div>
+    <div class="column is-7 is-offset-5">
+      <Content />
+    </div>
   </div>
-
-  <p>
-    Check out <a
-      href="https://github.com/sveltejs/kit#readme"
-      target="_blank"
-      rel="noreferrer">SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
 </main>
 
 <style lang="scss">
+  @use "bulma/sass/utilities/initial-variables" as iv;
+  @use "bulma/sass/utilities/mixins";
+
+  $break: iv.$tablet;
+
+  .page > div {
+    padding: iv.$size-4;
+
+    @include mixins.from($break) {
+      padding: iv.$size-1;
+    }
+  }
+
+  .intro {
+    @include mixins.from($break) {
+      position: fixed;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
 </style>
