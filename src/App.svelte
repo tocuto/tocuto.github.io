@@ -1,13 +1,7 @@
 <script>
-  // import routes from "../.routify/routes.default.js";
-  // import { Router, createRouter } from "@roxi/routify";
   import "./app.scss";
   import Hero from "./Hero.svelte";
   import Content from "./Content.svelte";
-
-  // export const router = createRouter({
-  //   routes,
-  // });
 </script>
 
 <main>

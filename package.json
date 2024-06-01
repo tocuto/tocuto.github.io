@@ -10,9 +10,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@roxi/routify": "next",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@tsconfig/svelte": "^5.0.2",
+    "@tsconfig/svelte": "^5.0.4",
     "bulma": "^1.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.3",
