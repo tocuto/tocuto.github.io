@@ -4,7 +4,7 @@
   import LinkedinLogo from "./assets/linkedin.svelte";
   import DiscordLogo from "./assets/discord.svelte";
 
-  const username = "tocu.";
+  const username = "@tocu.";
   let tooltip: HTMLDivElement;
   let timer: number | undefined;
 
