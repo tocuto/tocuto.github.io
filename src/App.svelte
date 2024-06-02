@@ -94,7 +94,6 @@
     position: absolute;
     margin: 2.25rem;
     top: 0;
-    z-index: 100;
     column-gap: 0.5rem;
 
     .i18n {
@@ -122,6 +121,7 @@
       position: fixed;
       left: 0;
       margin: 3rem;
+      z-index: 1;
     }
   }
 
