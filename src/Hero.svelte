@@ -3,28 +3,25 @@
   import GithubLogo from "./assets/github.svelte";
   import LinkedinLogo from "./assets/linkedin.svelte";
   import DiscordLogo from "./assets/discord.svelte";
+  import { animate } from "./animation";
 
-  const username = "@tocu.";
+  let username: HTMLSpanElement;
   let tooltip: HTMLDivElement;
-  let timer: number | undefined;
 
   const copyDiscord = async () => {
+    if (tooltip.classList.contains("copied")) return;
+
+    await navigator.clipboard.writeText(username.innerText);
     tooltip.classList.add("copied");
-    tooltip.innerText = "Copied!";
-    await navigator.clipboard.writeText(username);
+    animate(tooltip, "headShake", "500ms");
 
-    if (timer) clearTimeout(timer);
-
-    timer = setTimeout(() => {
+    setTimeout(() => {
       tooltip.classList.remove("copied");
-      tooltip.innerText = username;
-      timer = undefined;
-    }, 1000);
+    }, 1500);
   };
 
   onMount(() => {
     tooltip.classList.remove("copied");
-    tooltip.innerText = username;
   });
 </script>
 
@@ -49,7 +46,12 @@
   </li>
   <li class="mr-2">
     <a href={null} class="discord" on:click={copyDiscord}>
-      <div class="tooltip copied is-size-6" bind:this={tooltip}></div>
+      <div class="tooltip">
+        <div class="inner copied is-size-6" bind:this={tooltip}>
+          <span class="username" bind:this={username}>@tocu.</span>
+          <span class="copy">Copied!</span>
+        </div>
+      </div>
       <DiscordLogo />
     </a>
   </li>
@@ -69,41 +71,58 @@
   .discord {
     position: relative;
 
-    @mixin tooltip($color) {
-      visibility: hidden;
-      position: absolute;
-      background-color: $color;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.4rem;
+    &:hover .tooltip .inner:not(.copied) {
+      visibility: visible !important;
+      animation: fadeIn 150ms;
+    }
 
+    .tooltip {
+      position: absolute;
       top: -0.3rem;
       left: 50%;
       transform: translate(-50%, -100%);
 
-      &:after {
-        $size: 5px;
+      @mixin tooltip($color) {
+        background-color: $color;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.4rem;
 
-        content: " ";
-        margin-left: -$size;
-        border-width: $size;
-        border-style: solid;
-        border-color: $color transparent transparent transparent;
-        position: absolute;
-        top: 100%;
-        left: 50%;
+        &:after {
+          $size: 5px;
+
+          content: " ";
+          margin-left: -$size;
+          border-width: $size;
+          border-style: solid;
+          border-color: $color transparent transparent transparent;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+        }
       }
-    }
 
-    .tooltip {
-      @include tooltip(iv.$black);
-    }
-    .tooltip.copied {
-      @include tooltip(iv.$green);
-      visibility: visible !important;
-    }
+      .inner {
+        @include tooltip(iv.$black);
+        visibility: hidden;
 
-    &:hover .tooltip {
-      visibility: visible;
+        .username {
+          display: initial;
+        }
+        .copy {
+          display: none;
+        }
+      }
+      .inner.copied {
+        @include tooltip(iv.$green);
+        visibility: visible !important;
+
+        .username {
+          display: none !important;
+        }
+        .copy {
+          display: initial !important;
+        }
+      }
     }
   }
 </style>

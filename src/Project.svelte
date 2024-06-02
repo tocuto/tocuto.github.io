@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import GithubLogo from "./assets/github.svelte";
+  import { animate } from "./animation";
 
   export let logo = "https://bulma.io/assets/images/placeholders/96x96.png";
   export let github = "https://github.com/tocuto";
@@ -8,10 +9,13 @@
 
   function open() {
     modal.classList.add("is-active");
+    animate(modal, "fadeIn", "150ms");
   }
 
   function close() {
-    modal.classList.remove("is-active");
+    animate(modal, "fadeOut", "150ms").then(() => {
+      modal.classList.remove("is-active");
+    });
   }
 
   onMount(() => {
