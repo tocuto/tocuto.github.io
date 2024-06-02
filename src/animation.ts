@@ -5,7 +5,7 @@ export const animate = (
   animation: string,
   duration?: string,
   prefix = "animate__",
-): Promise<undefined> => {
+): Promise<void> => {
   return new Promise((resolve) => {
     const animated = `${prefix}animated`;
     const animationName = `${prefix}${animation}`;
@@ -13,6 +13,7 @@ export const animate = (
     if (!!duration) {
       element.style.setProperty("--animate-duration", duration);
     }
+    element.style.setProperty("animation-iteration-count", "1");
     element.classList.add(animated, animationName);
 
     element.addEventListener(
@@ -26,9 +27,9 @@ export const animate = (
             element.style.setProperty("--animate-duration", before);
           }
         }
-
         element.classList.remove(animated, animationName);
-        resolve(undefined);
+
+        resolve();
       },
       { once: true },
     );

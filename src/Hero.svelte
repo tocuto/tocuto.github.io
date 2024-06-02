@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Translation from "./Translation.svelte";
   import GithubLogo from "./assets/github.svelte";
   import LinkedinLogo from "./assets/linkedin.svelte";
   import DiscordLogo from "./assets/discord.svelte";
@@ -25,8 +26,13 @@
   });
 </script>
 
-<h1 class="title is-1">Iván Battistón</h1>
-<h4 class="subtitle is-4">Backend Engineer</h4>
+<h1 class="title is-size-2-touch is-size-1-desktop">Iván Battistón</h1>
+<h4 class="subtitle is-size-5-touch is-size-4-desktop">
+  <Translation>
+    <span slot="en">Backend Engineer</span>
+    <span slot="es">Ingeniero Backend</span>
+  </Translation>
+</h4>
 <p class="description">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nostrum, eos
   tempore quaerat saepe distinctio architecto officiis cupiditate perspiciatis.
