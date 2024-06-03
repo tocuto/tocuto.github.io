@@ -34,10 +34,16 @@
   </Translation>
 </h4>
 <p class="description">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nostrum, eos
-  tempore quaerat saepe distinctio architecto officiis cupiditate perspiciatis.
-  Ipsam neque aut voluptatum incidunt delectus perspiciatis, debitis voluptate
-  magnam porro.
+  <Translation>
+    <span slot="en">
+      Self-taught developer with a mechanical technician background and a
+      passion for problem solving and learning.
+    </span>
+    <span slot="es">
+      Desarrollador autodidacta, graduado como técnico mecánico y con una pasión
+      para resolver problemas y aprender.
+    </span>
+  </Translation>
 </p>
 <ul class="is-flex is-align-items-center is-size-4 social">
   <li class="mr-2">
