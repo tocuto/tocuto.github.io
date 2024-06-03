@@ -7,6 +7,18 @@ export const animate = (
   prefix = "animate__",
 ): Promise<void> => {
   return new Promise((resolve) => {
+    if (element.dataset.animating === "true") {
+      element.addEventListener(
+        "animationend",
+        () => {
+          animate(element, animation, duration, prefix).then(resolve);
+        },
+        { once: true },
+      );
+      return;
+    }
+
+    element.dataset.animating = "true";
     const animated = `${prefix}animated`;
     const animationName = `${prefix}${animation}`;
     const before = element.style.getPropertyValue("--animate-duration");
@@ -19,6 +31,7 @@ export const animate = (
     element.addEventListener(
       "animationend",
       (event) => {
+        element.dataset.animating = "false";
         event.stopPropagation();
         if (!!duration) {
           if (!before) {
