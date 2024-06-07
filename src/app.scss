@@ -1,1 +1,20 @@
 @use "bulma/sass";
+@use "bulma/sass/utilities/initial-variables" as iv;
+
+* {
+  scrollbar-color: iv.$turquoise iv.$grey-dark;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: iv.$turquoise;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: iv.$grey-dark;
+}
