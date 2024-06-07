@@ -10,7 +10,7 @@
 
   const setLanguage = (lang: Locale, blur: boolean) => {
     language = lang;
-    if (!mounted) return;
+    if (!mounted || !display) return;
     // language doesn't exist in slots
     if (!data[lang]) lang = defaultLang;
     // language wasn't provided for this template
@@ -23,7 +23,7 @@
       }
     }
 
-    if (!blur) {
+    if (!blur || display.offsetParent === null) {
       display.innerHTML = data[lang].innerHTML;
       return;
     }
