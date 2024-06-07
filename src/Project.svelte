@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import GithubLogo from "./assets/github.svelte";
   import { animate } from "./animation";
+  import Translation from "./Translation.svelte";
 
   export let logo = "https://bulma.io/assets/images/placeholders/96x96.png";
   export let github = "https://github.com/tocuto";
@@ -36,7 +37,20 @@
   <div class="modal-background" />
   <div class="modal-card">
     <section class="modal-card-body">
-      <slot name="modal" />
+      <h1 class="title is-size-3-touch is-size-2-desktop">
+        <slot name="title">Project</slot>
+      </h1>
+      <h3 class="subtitle is-size-5-touch is-size-4-desktop">
+        <a target="_blank" href={github}>{github}</a>
+      </h3>
+      <slot name="modal">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eum
+          consequatur alias iure officiis veniam nam dolorem optio voluptatibus
+          distinctio magni, nihil, culpa deleniti perspiciatis quis voluptas vel
+          cupiditate fugit.
+        </p>
+      </slot>
     </section>
   </div>
   <button class="modal-close is-large" aria-label="Close" />
@@ -57,7 +71,12 @@
       <slot name="description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </slot>
-      <a href={null} on:click={open}>Learn more</a>
+      <a href={null} on:click={open}>
+        <Translation>
+          <span slot="en">Learn more...</span>
+          <span slot="es">Leer más...</span>
+        </Translation>
+      </a>
     </p>
   </div>
 </div>

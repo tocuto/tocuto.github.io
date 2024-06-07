@@ -53,8 +53,8 @@
   <CFM />
   <Chessagon />
   <Parkour />
-  <Plugins />
   <Transfromage />
+  <Plugins />
 </div>
 
 <style lang="scss">
