@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Logo from "../assets/tplugins.png";
   import Project from "../Project.svelte";
   import Translation from "../Translation.svelte";
 </script>
 
-<Project github="https://github.com/tocuto/tfmplugins">
+<Project github="https://github.com/tocuto/tfmplugins" logo={Logo}>
   <span slot="title">TFM Plugins</span>
   <span slot="description">
     <Translation>

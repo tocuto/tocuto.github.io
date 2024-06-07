@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Logo from "../assets/parkour.webp";
   import Project from "../Project.svelte";
   import Translation from "../Translation.svelte";
 </script>
 
-<Project github="https://github.com/a801-luadev/parkour">
+<Project github="https://github.com/a801-luadev/parkour" logo={Logo}>
   <span slot="title">Parkour</span>
   <span slot="description">
     <Translation>

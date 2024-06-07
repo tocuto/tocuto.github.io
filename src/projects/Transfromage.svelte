@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Logo from "../assets/transfromage.webp";
   import Project from "../Project.svelte";
   import Translation from "../Translation.svelte";
 </script>
 
-<Project github="https://github.com/tocuto/transfromage">
+<Project github="https://github.com/tocuto/transfromage" logo={Logo}>
   <span slot="title">Transfromage</span>
   <span slot="description">
     <Translation>

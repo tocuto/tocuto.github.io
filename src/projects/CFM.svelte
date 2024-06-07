@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Logo from "../assets/cfm.png";
   import Project from "../Project.svelte";
   import Translation from "../Translation.svelte";
 </script>
 
-<Project github="https://github.com/cheeseformice">
+<Project github="https://github.com/cheeseformice" logo={Logo}>
   <span slot="title">CheeseForMice</span>
   <span slot="description">
     <Translation>

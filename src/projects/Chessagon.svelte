@@ -1,9 +1,10 @@
 <script lang="ts">
+  import Logo from "../assets/chessagon.png";
   import Project from "../Project.svelte";
   import Translation from "../Translation.svelte";
 </script>
 
-<Project github="https://github.com/tocuto/chessagon">
+<Project github="https://github.com/tocuto/chessagon" logo={Logo}>
   <span slot="title">Chessagon</span>
   <span slot="description">
     <Translation>
