@@ -20,7 +20,7 @@
     etc.
     <br /><br />
     In addition to my career in software, I have recently graduated as a mechanical
-    technician, achieving the highest average in my class. This technical education
+    technician, achieving the highest GPA in my class (3.9/4). This technical education
     has provided me with a solid foundation in mechanical systems, and a unique perspective
     that complements my software engineering expertise.
     <br /><br />
@@ -31,17 +31,18 @@
     Soy un ingeniero backend autodidacta que ama jugar con redes. Mi jornada en
     el desarrollo de software empieza en 2013, cuando me registré en
     Transformice: un juego online que te permite programar minijuegos (módulos)
-    en Lua. Impulsado por la curiosidad para entender cómo funciona la
-    tecnología, mejoré mis habilidades aprendiendo de manera independiente,
+    con Lua. Impulsado por la curiosidad para entender cómo funciona todo tipo
+    de tecnología, mejoré mis habilidades aprendiendo de manera independiente,
     enfocándome en la ingeniería de software backend.
     <br /><br />
     Con el pasar de los años, me he vuelto cualificado con varios lenguajes de programación
-    y tecnología, incluyendo Python, Rust, TypeScript, Docker y bases de datos SQL.
+    y tecnologías, incluyendo Python, Rust, TypeScript, Docker, MySQL, PostgreSQL,
+    etc.
     <br /><br />
     Además de mi carrera en software, recientemente me gradué como técnico mecánico,
-    con el promedio más alto de la clase. Esta educación técnica me dio unos cimientos
-    sólidos en sistemas mecánicos, y una perspectiva única que complementa mi experiencia
-    como ingeniero de software.
+    con el promedio más alto de mi clase (9.56/10). Esta educación técnica me dio
+    unos cimientos sólidos en sistemas mecánicos, y una perspectiva única que complementa
+    mi experiencia como ingeniero de software.
     <br /><br />
     Con una combinación de habilidades de software y mecánicas, estoy ansioso por
     contribuir a proyectos que me desafíen a pensar de manera crítica y desarrollar
