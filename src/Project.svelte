@@ -9,11 +9,13 @@
   let modal: HTMLDivElement;
 
   function open() {
+    if (modal.classList.contains("is-active")) return;
     modal.classList.add("is-active");
     animate(modal, "fadeIn", "150ms");
   }
 
   function close() {
+    if (!modal.classList.contains("is-active")) return;
     animate(modal, "fadeOut", "150ms").then(() => {
       modal.classList.remove("is-active");
     });
